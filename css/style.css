@@ -1,0 +1,92 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: #ffffff; }
+
+.header {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5f0096; }
+
+.header__list {
+  display: flex; }
+  .header__list li {
+    list-style-type: none;
+    margin: 15px; }
+
+.header__registration {
+  display: flex;
+  align-items: center; }
+
+.divide {
+  height: 55px;
+  width: 5px;
+  background-color: #fff; }
+
+/****registration-form****/
+.registration__wrapper {
+  height: 100vh;
+  background-color: #9300b8; }
+  .registration__wrapper h1 {
+    text-align: center;
+    padding: 25px 0px;
+    color: #ffffff; }
+
+.registration__form {
+  margin: 0px auto;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: none;
+  border-radius: 10px; }
+  .registration__form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin: 25px 40px 0px; }
+    .registration__form form div {
+      display: flex;
+      flex-direction: column; }
+  .registration__form form div {
+    position: relative; }
+    .registration__form form div input {
+      height: 40px;
+      border-radius: 5px;
+      border-color: #9300b8; }
+    .registration__form form div label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 15px; }
+  .registration__form button[type="submit"] {
+    cursor: pointer;
+    border: none;
+    outline: none; }
+  .registration__form .register {
+    height: 50px;
+    margin: 40px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #9300b8; }
+
+.transition {
+  display: flex; }
+  .transition button[type="submit"] {
+    height: 60px;
+    width: 200px;
+    margin: 0px; }
+    .transition button[type="submit"].sign-up {
+      border-top-left-radius: 10px; }
+    .transition button[type="submit"].sign-in {
+      border-top-right-radius: 10px; }
+
+/*# sourceMappingURL=style.css.map */

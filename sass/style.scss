@@ -1,0 +1,109 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+}
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(95, 0, 150);
+}
+.header__list {
+    display: flex;
+    li {
+        list-style-type: none;
+        margin: 15px;
+    }
+}
+.header__registration {
+    display: flex;
+    align-items: center;
+}
+.divide {
+    height: 55px;
+    width: 5px;
+    background-color: #fff;
+}
+
+/****registration-form****/
+.registration__wrapper {
+    height: 100vh;
+    background-color: rgb(147, 0, 184);
+    h1 {
+        text-align: center;
+        padding: 25px 0px;
+        color: #ffffff;
+    }
+}
+.registration__form {
+    margin: 0px auto;
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-grow: 1;
+        margin: 25px 40px 0px;
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    form div {
+        position: relative;
+        input {
+            height: 40px;
+            border-radius: 5px;
+            border-color: rgb(147, 0, 184);
+        }
+        label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-left: 15px;
+        }
+    }
+
+    button[type="submit"] {
+        cursor: pointer;
+        border: none;
+        outline: none;
+    }
+    .register {
+        height: 50px;
+        margin: 40px;
+        border-radius: 10px;
+        color: #ffffff;
+        background-color: rgb(147, 0, 184);
+    }
+}
+.transition {
+    display: flex;
+
+    button[type="submit"] {
+        height: 60px;
+        width: 200px;
+        margin: 0px;
+
+        &.sign-up {
+            border-top-left-radius: 10px;
+        }
+        &.sign-in {
+            border-top-right-radius: 10px;
+        }
+    }
+}
