@@ -9,14 +9,14 @@ const template = `
                 </div>
                 <form action="">
                     <div>
-                        <input type="text" name="" id="">
-                        <label>Username</label>
-                    </div>
-                    <div><input type="text" name="" id="">
+                        <input type="text" name="email" id="">
                         <label>Email</label>
                     </div>
-                    <div><input type="text" name="" id="">
-                        <label>Password</label>
+                    <div><input type="text" name="userName" id="">
+                         <label>Username</label>
+                    </div>
+                    <div><input type="text" name="password" id="">
+                         <label>Password</label>
                     </div>
                 </form>
                 <button class="register" type="submit">Sign up</button>
