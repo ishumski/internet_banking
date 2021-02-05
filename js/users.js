@@ -9,7 +9,9 @@ class ListOfUsers {
     }
 }
 
-const users = JSON.parse(storageService.get("users"));
+// console.log(storageService.get("users"))
+
+let users = JSON.parse(storageService.get("users"));
 
 const listOfUsers = new ListOfUsers (users || []);
 

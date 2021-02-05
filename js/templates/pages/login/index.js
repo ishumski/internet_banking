@@ -16,8 +16,9 @@ const template = `
                     <div><input type="text" name="" id="">
                         <label>Password</label>
                     </div>
+                    <button class="register" type="submit">Sign in</button>
                 </form>
-                <button class="register" type="submit">Sign in</button>
+                
             </div>
         </div>
 `

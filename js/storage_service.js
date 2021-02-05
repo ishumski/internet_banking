@@ -7,7 +7,7 @@ class StorageService {
     }
     //метод для получения данных о user (есть ли он в хранилище данных или нет)
     get(key) {
-        localStorage.getItem(key);
+        return localStorage.getItem(key);
     }
 }
 
