@@ -1,6 +1,6 @@
-import storageService from "../storage_service.js"
-import listOfUsers from "../users.js"
-import { showErrors } from "../utils.js"
+import storageService from "../utils/storage_service.js"
+import listOfUsers from "../utils/users.js"
+import { showErrors } from "../utils/utils.js"
 
 const EMAIL_REGEX = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const USER_NAME = /^[a-zA-Z0-9\-]+$/
