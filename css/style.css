@@ -3,6 +3,61 @@
   padding: 0px;
   box-sizing: border-box; }
 
+.credits {
+  max-width: 1300px;
+  margin: 0 auto; }
+
+h1 {
+  color: #323232;
+  font-size: 32px;
+  margin-bottom: 0.7em; }
+
+.title__text {
+  width: 800px;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: #737373;
+  margin-bottom: 50px; }
+
+.credits__box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 45px; }
+
+.credits-wrapper {
+  display: flex;
+  height: 264px;
+  border: 1px solid #8900be;
+  color: #737373; }
+  .credits-wrapper img {
+    height: inherit;
+    width: 264px; }
+
+span {
+  color: #727272;
+  font-size: 18px;
+  font-weight: bold; }
+
+.credits__info {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  padding: 30px 0px 0px 30px; }
+
+.credits__info-title {
+  font-size: 23px;
+  color: #575757; }
+
+.credits__info-assignment {
+  margin: 15px 0px; }
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
 a {
   text-decoration: none;
   color: #ffffff; }

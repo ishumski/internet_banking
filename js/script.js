@@ -1,7 +1,6 @@
 import { registration } from "./render/renderRegistrationLogin/render-registration/render_registration.js"
 import { login } from "./render/renderRegistrationLogin/render-login/render_login.js"
 
-
 //обработчик событий вешаем на кнопку Register
 const registerBtn = document.querySelector(".register-btn");
 registerBtn.addEventListener("click", registration);
