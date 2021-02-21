@@ -1,9 +1,12 @@
 @import "../js/components/credit/credit.scss";
-
+@import "../js/components/credit/credit_BYN/style.scss";
+@import "../js/components/deposits/deposits-list/style.scss";
+@import "../js/components/deposits/deposit-page/style.scss";
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: Roboto, sans-serif;
 }
 a {
     text-decoration: none;
