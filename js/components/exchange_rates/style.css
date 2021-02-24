@@ -1,8 +1,4 @@
-table, tr, td {
-  border: 1px solid black; }
-
-td {
-  height: 100px;
-  width: 150px; }
+table, tr, th {
+  border: 1px solid; }
 
 /*# sourceMappingURL=style.css.map */
