@@ -30,7 +30,8 @@ fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0")
 
                     const cell = document.createElement("td");
                     const textNode = document.createTextNode(value);
-
+                    // console.log(value);
+                    console.log(textNode);
                     cell.appendChild(textNode);
                     row.appendChild(cell);
 
@@ -41,3 +42,27 @@ fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0")
         });
     })
 exchangeRates.appendChild(table);
+
+/*current date*/
+function currentDate() {
+
+    const curDate = document.querySelector(".current_date");
+
+    const date = new Date();
+
+    let day = date.getDate().toString();
+    let month = (date.getMonth() + 1).toString();
+    const year = date.getFullYear().toString();
+
+    if (day.length < 2) {
+        day = `${0 + day}`;
+    }
+
+    if (month.length < 2) {
+        month = `${0 + month}`;
+    }
+
+    curDate.innerHTML = `${day}.${month}.${year}`;
+}
+
+currentDate();
