@@ -1,8 +1,8 @@
 const amount = document.querySelector("#amount");
 const slider = document.querySelector("#slider");
 const months = document.querySelector("#months");
-const span = document.querySelector("span");
-const button =  document.querySelector("button");
+const payAmount = document.querySelector("#pay__amount");
+
 
 const INTEREST_RATE = 28.90;
 const MONTH_IN_YEAR = 12;
@@ -15,6 +15,18 @@ function creditCount(sum, term) {
     return paymentPerMonth;
 }
 
-button.addEventListener("click", ()=>{
-    span.textContent = creditCount(amount.value, months.value);
-})
+slider.addEventListener("mouseup", (event) => {
+    event.preventDefault();
+
+    payAmount.innerHTML = ` ${ creditCount(slider.value, months.value)}`;
+});
+
+function amountValue() {
+    const slider = document.querySelector("#slider");
+
+    slider.addEventListener("mouseup", () => {
+        const sliderValue = slider.value;
+        amount.value = sliderValue;
+    })
+}
+amountValue();

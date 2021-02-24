@@ -28,7 +28,6 @@ function depositCounter(sum, term) {
     // Math.round(num * 100) / 100 округление
 }
 
-
 //вывод суммы процентов по клику
 slider.addEventListener("mouseup", (event) => {
     event.preventDefault();
