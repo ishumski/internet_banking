@@ -1,8 +1,12 @@
+//рендер таблицы для получения курсов валют по API
 const exchangeRates = document.querySelector(".exchange__rates");
 
-const headers = ["Валюта", "Покупка", "Продажа"];
-
 const table = document.createElement("table");
+
+const thead = document.createElement("thead");
+const tbody = document.createElement("tbody");
+
+const headers = ["Валюта", "Покупка", "Продажа"];
 const headerRow = document.createElement("tr");
 
 headers.forEach(elem => {
@@ -12,38 +16,46 @@ headers.forEach(elem => {
     header.appendChild(textNode);
     headerRow.appendChild(header);
 })
-
-table.appendChild(headerRow);
+thead.appendChild(headerRow)
+table.appendChild(thead);
 exchangeRates.appendChild(table);
 
+
+const BANK_RATE = 1.15;
 
 fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0")
     .then(response => response.json())
     .then(result => {
-        result.forEach(elem => {
-            const row = document.createElement("tr");
-            let { Cur_ID, Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate } = elem;
 
-            if (Cur_ID == 145 || Cur_ID == 292 || Cur_ID == 143 || Cur_ID == 293 || Cur_ID == 298) {
+        const rows = result.map((currency) => {
+            let { Cur_ID, Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate } = currency;
 
-                Object.values(elem).forEach((value) => {
+            if ([145, 292, 143, 293, 298].includes(Cur_ID)) {
 
-                    const cell = document.createElement("td");
-                    const textNode = document.createTextNode(value);
-                    // console.log(value);
-                    console.log(textNode);
-                    cell.appendChild(textNode);
-                    row.appendChild(cell);
+                return `
+                    <tr>
+                        <td>${Cur_Scale} ${Cur_Name} (${Cur_Abbreviation})</td>
+                        <td>${Cur_OfficialRate}</td>
+                        <td>${(Cur_OfficialRate + ((Cur_OfficialRate * BANK_RATE) / 100)).toFixed(4)}</td>
+                    </tr>
 
-                })
-                table.appendChild(row);
+                    `
             }
-
         });
-    })
+        tbody.innerHTML = rows.join("");
+        table.appendChild(tbody);
+
+
+
+
+
+
+
+    });
+
 exchangeRates.appendChild(table);
 
-/*current date*/
+// /*current date*/
 function currentDate() {
 
     const curDate = document.querySelector(".current_date");
@@ -66,3 +78,8 @@ function currentDate() {
 }
 
 currentDate();
+
+
+/*конвертёр валют */
+
+

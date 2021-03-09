@@ -1,6 +1,7 @@
 import loginTemplate from "../../../templates/pages/login/index.js";
 import { registration } from "../render-registration/render_registration.js"
 import userLogin from "../../../authorization/user_login.js";
+import { navigateToUrl } from "../../../utils/routing.js";
 
 const rootDiv = document.querySelector(".container");
 
@@ -12,7 +13,9 @@ export function login() {
 
 
     const signUp = document.querySelector(".sign-up");
-    signUp.addEventListener("click", () => {
-        registration();
+    signUp.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        navigateToUrl('/registration');
     })
 } 

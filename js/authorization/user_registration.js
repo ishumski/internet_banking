@@ -1,3 +1,5 @@
+import currentUser from "../utils/current_user.js";
+import { navigateToUrl } from "../utils/routing.js";
 import storageService from "../utils/storage_service.js"
 import listOfUsers from "../utils/users.js"
 import { showErrors } from "../utils/utils.js"
@@ -59,13 +61,24 @@ export default function userRegistration(event) {
 
     showErrors(errors);
 
+    const hashedPassword = CryptoJS.SHA3(password);
+
     let newUser = {
         email,
         userName,
-        password,
+        password: hashedPassword.toString(),
     }
 
-    listOfUsers.add(newUser);
-    storageService.set("users", JSON.stringify(listOfUsers.users));
+    try {
+        listOfUsers.add(newUser);
+        currentUser.login(newUser);
+
+        storageService.set("users", JSON.stringify(listOfUsers.users));
+        storageService.set("currentUser", JSON.stringify(currentUser.userData));
+
+        navigateToUrl("/");
+    } catch (error) {
+        alert(error.message);
+    }
 
 }

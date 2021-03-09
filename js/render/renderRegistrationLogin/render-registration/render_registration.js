@@ -1,5 +1,6 @@
 import userRegistration from "../../../authorization/user_registration.js";
 import registrationTemplate from "../../../templates/pages/registaration/index.js"
+import { navigateToUrl } from "../../../utils/routing.js";
 import { login } from "../render-login/render_login.js";
 // import {userRegistration} from "../../../authorization/user_registration.js"
 
@@ -16,8 +17,10 @@ export function registration() {
     
     //
     const signIn = document.querySelector(".sign-in");
-    signIn.addEventListener("click", () => {
-        login();
+    signIn.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        navigateToUrl('/login');
     });
 }
 
