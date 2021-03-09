@@ -8,17 +8,15 @@ const rootDiv = document.querySelector(".container");
 export default function renderPersonalPage() {
     rootDiv.innerHTML = templatePersonalPage;
 
-
     const paymentsBtn = document.querySelector(".option__menu-payments");
     const currencyBtn = document.querySelector(".option__menu-currency");
     const depositsBtn = document.querySelector(".option__menu-deposits");
     const creditsBtn = document.querySelector(".option__menu-credits");
 
 
-
     paymentsBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        
+
     })
 
     currencyBtn.addEventListener("click", (event) => {
@@ -28,11 +26,11 @@ export default function renderPersonalPage() {
 
     depositsBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        renderDepositList();
+        navigateToUrl("/deposit_list");
     })
 
     creditsBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        renderCreditList()
+        navigateToUrl("/credit_list");
     })
 }

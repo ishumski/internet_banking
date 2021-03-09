@@ -12,6 +12,6 @@ export default function renderCreditList() {
     firstCell.addEventListener("click", (event) => {
         event.preventDefault();
 
-        renderCurrentCredit();
+        navigateToUrl("/credit_page");
     })
 };

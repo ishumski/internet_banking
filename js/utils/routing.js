@@ -3,7 +3,10 @@ import { login } from "../render/renderRegistrationLogin/render-login/render_log
 import currentUser from "../utils/current_user.js"
 import renderMain from "../render/renderPages/main-page/render_main.js";
 import renderPersonalPage from "../render/renderPersonalPage/render_personal_page.js";
-
+import renderDepositList from "../render/renderDepositsList/render_deposits_list.js"
+import renderCurrentDeposite from "../render/renderCurrentDeposit/render_current_deposit.js"
+import renderCreditList from "../render/renderCreditsList/render_credit_list.js"
+import renderCurrentCredit from "../render/renderCurrentCredit/render_current_credit.js"
 
 const listRoutePattern = /^\/list\/\d+$/;
 
@@ -13,6 +16,15 @@ const REGISTRATION_URL = "/registration";
 
 const LOGIN_URL = "/login";
 
+const PERSONAL_PAGE = "/personal_page";
+
+const DEPOSIT_LIST_URL = "/deposit_list";
+const DEPOSITE_PAGE = "/deposit_page";
+
+const CREDIT_LIST_URL = "/credit_list";
+const CREDIT_PAGE = "/credit_page";
+
+const EXCHANGE_RATES_URL = "/exchange_rates"
 
 export function renderPage() {
     const { pathname: currentUrl } = window.location;
@@ -26,6 +38,29 @@ export function renderPage() {
         renderMain();
         return;
     }
+    // if (currentUrl === PERSONAL_PAGE) {
+    //     renderPersonalPage();
+    //     return;
+    // }
+
+    if (currentUrl === DEPOSIT_LIST_URL) {
+        renderDepositList();
+        return;
+    }
+    if (currentUrl === DEPOSITE_PAGE) {
+        renderCurrentDeposite();
+        return;
+    }
+
+    if (currentUrl === CREDIT_LIST_URL) {
+        renderCreditList();
+        return;
+    }
+
+    if (currentUrl === CREDIT_PAGE) {
+        renderCurrentCredit();
+        return;
+    }
 
     if (!currentUser.userData && currentUrl === REGISTRATION_URL) {
         registration();
@@ -35,7 +70,7 @@ export function renderPage() {
         login();
         return;
     }
-    
+
     navigateToUrl("/");
 }
 

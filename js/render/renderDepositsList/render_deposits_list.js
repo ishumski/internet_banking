@@ -8,10 +8,10 @@ export default function renderDepositList() {
     rootDiv.innerHTML = templateDepositList;
 
     const easyMoneyBtn = document.querySelector(".easy-money");
+
     easyMoneyBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
-        renderCurrentDeposite()
+        navigateToUrl("/deposit_page");
     })
-
 }

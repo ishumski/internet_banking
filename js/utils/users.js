@@ -16,8 +16,6 @@ class ListOfUsers {
     }
 }
 
-// console.log(storageService.get("users"))
-
 let users = JSON.parse(storageService.get("users"));
 
 const listOfUsers = new ListOfUsers (users || []);
