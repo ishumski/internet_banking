@@ -1,27 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <div class="container">
-
-        <section class="deposits">
+const template = `
+ <section class="deposits">
 
             <h1>Депозиты физических лиц</h1>
             <p class="title__text">
                 Хорошо работать можно только в хороших условиях. Поэтому мы намерены создавать лучшие условия для работы
                 ваших денег: выгодно разместить временно свободные средства компании вы сможете на банковских депозитах
-                Белорусского народного банка.
+                thunDER BANK.
             </p>
             <div class="deposits__box">
-                <div class="deposits-wrapper">
+                <div class="deposits-wrapper easy-money">
                     <img src="" alt="">
                     <div class="deposits__info">
                         <h3 class="deposits__info-title">«Просто деньги»</h3>
@@ -54,12 +41,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+    </section>
+    
+    <script src="/js/components/deposits/deposit-page/script.js"></script>
+`
 
-    </div>
-
-
-    <script src="../deposits-list/script.js"></script>
-</body>
-
-</html>
+export default template;

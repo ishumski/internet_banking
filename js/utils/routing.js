@@ -4,6 +4,7 @@ import currentUser from "../utils/current_user.js"
 import renderMain from "../render/renderPages/main-page/render_main.js";
 import renderPersonalPage from "../render/renderPersonalPage/render_personal_page.js";
 
+
 const listRoutePattern = /^\/list\/\d+$/;
 
 const INDEX_URLS = ["/", "/index.html"];
