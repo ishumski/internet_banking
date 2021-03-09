@@ -18,13 +18,12 @@ export default function renderPersonalPage() {
 
     paymentsBtn.addEventListener("click", (event) => {
         event.preventDefault();
-        alert("hello1")
+        
     })
 
     currencyBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
-        alert("hello2")
     })
 
     depositsBtn.addEventListener("click", (event) => {
