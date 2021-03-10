@@ -17,20 +17,20 @@ export default function renderPersonalPage() {
     paymentsBtn.addEventListener("click", (event) => {
         event.preventDefault();
 
-    })
+    });
 
     currencyBtn.addEventListener("click", (event) => {
         event.preventDefault();
-
-    })
+        navigateToUrl("/exchange_rates");
+    });
 
     depositsBtn.addEventListener("click", (event) => {
         event.preventDefault();
         navigateToUrl("/deposit_list");
-    })
+    });
 
     creditsBtn.addEventListener("click", (event) => {
         event.preventDefault();
         navigateToUrl("/credit_list");
-    })
+    });
 }

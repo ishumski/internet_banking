@@ -7,6 +7,7 @@ import renderDepositList from "../render/renderDepositsList/render_deposits_list
 import renderCurrentDeposite from "../render/renderCurrentDeposit/render_current_deposit.js"
 import renderCreditList from "../render/renderCreditsList/render_credit_list.js"
 import renderCurrentCredit from "../render/renderCurrentCredit/render_current_credit.js"
+import renderExchangeRates from "../render/render_exchange_rates/render_exchange_rates.js"
 
 const listRoutePattern = /^\/list\/\d+$/;
 
@@ -38,10 +39,6 @@ export function renderPage() {
         renderMain();
         return;
     }
-    // if (currentUrl === PERSONAL_PAGE) {
-    //     renderPersonalPage();
-    //     return;
-    // }
 
     if (currentUrl === DEPOSIT_LIST_URL) {
         renderDepositList();
@@ -61,6 +58,12 @@ export function renderPage() {
         renderCurrentCredit();
         return;
     }
+
+    if (currentUrl === EXCHANGE_RATES_URL) {
+        renderExchangeRates()
+        return;
+    }
+
 
     if (!currentUser.userData && currentUrl === REGISTRATION_URL) {
         registration();

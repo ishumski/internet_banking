@@ -1,9 +1,10 @@
-@import "../js/components/credit/credits_list/credit.css";
-@import "../js/components/credit/credit_BYN/style.scss";
-@import "../js/components/deposits/deposits-list/style.scss";
-@import "../js/components/deposits/deposit-page/style.scss";
-@import "../js/components/exchange_rates/style.scss";
-@import "../js/components/option_page/style.scss";
+@import "./credit.scss";
+@import "./credit_list.scss";
+@import "./credit_BYN.scss";
+@import "./deposit_list.scss";
+@import "./deposit_page.scss";
+@import "./exchange_rates.scss";
+@import "./option_page.scss";
 * {
     margin: 0px;
     padding: 0px;

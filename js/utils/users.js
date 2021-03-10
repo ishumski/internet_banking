@@ -10,7 +10,6 @@ class ListOfUsers {
         this.users = [...this.users, user];
     }
 
-    //метод позволяет нам получить email уже имеющегося пользователя и сравнить его с email из login
     getUserByEmail(email){
         return this.users.find((user)=>user.email === email);
     }
