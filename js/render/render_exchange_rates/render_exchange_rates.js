@@ -1,5 +1,5 @@
 import templateExchangeRates from "../../templates/pages/exchange_rates/index.js"
-import  currentDate  from "../../utils/utils.js"
+import currentDate from "../../utils/utils.js"
 
 const rootDiv = document.querySelector(".container");
 
@@ -78,7 +78,6 @@ export default function renderExchangeRates() {
                             return;
                         }
                         elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(4));
-
                     })
                 });
             })

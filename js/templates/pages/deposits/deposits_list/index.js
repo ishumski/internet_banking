@@ -1,6 +1,6 @@
 const template = `
- <section class="deposits">
-
+ <div class="deposits">
+  
             <h1>Депозиты физических лиц</h1>
             <p class="title__text">
                 Хорошо работать можно только в хороших условиях. Поэтому мы намерены создавать лучшие условия для работы
@@ -41,9 +41,8 @@ const template = `
                     </div>
                 </div>
             </div>
-    </section>
+    </div>
     
-    <script src="/js/components/deposits/deposit-page/script.js"></script>
 `
 
 export default template;

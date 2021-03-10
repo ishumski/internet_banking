@@ -1,11 +1,7 @@
 export function showErrors(errors) {
 
-    console.log(errors)
-
     for (let key in errors) {
         const span = document.querySelector(`input[name="${key}"]+span`);
-
-        console.log(span)
 
         if (errors[key].length > 0) {
 

@@ -1,47 +1,51 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-
 .deposits {
-    max-width: 1300px;
-    margin: 0 auto;
+    background-image: url("/images/bcg1.jpg");
+    background-size: cover;
 }
 h1 {
-    color: #323232;
+    color: #ffffff;
     font-size: 32px;
-    margin-bottom: 0.7em;
+    padding: 25px 25px 0px;
+    border-bottom: 2px solid violet;
 }
 .title__text {
     width: 800px;
     font-size: 18px;
     line-height: 1.5;
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    color: #737373;
+    color: #ffffff;
+    padding-left: 155px;
     margin-bottom: 50px;
 }
 
 .deposits__box {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 45px;
+    padding-bottom: 50px;
 }
 .deposits-wrapper {
     display: flex;
     height: 264px;
-    border: 1px solid rgb(137, 0, 190);
-    color: #737373;
+    color: #ffffff;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: rgba(91, 23, 100, 0.6);
+    &:hover {
+        border: 2px solid rgba(183, 0, 255, 0.856);
+        background-color: rgba(186, 52, 204, 0.493);
+    }
     img {
         height: inherit;
         width: 264px;
     }
 }
 span {
-    color: #727272;
+    color: #ffffff;
     font-size: 18px;
-    font-weight: bold;
 }
 .deposits__info {
     display: flex;
@@ -52,10 +56,9 @@ span {
 }
 .deposits__info-title {
     font-size: 23px;
-    color: #575757;
+    color: #ffffff;
 }
 .deposits__info-assignment {
     margin: 15px 0px;
 }
-.deposits__info-sum {
-}
+

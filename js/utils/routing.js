@@ -17,8 +17,6 @@ const REGISTRATION_URL = "/registration";
 
 const LOGIN_URL = "/login";
 
-const PERSONAL_PAGE = "/personal_page";
-
 const DEPOSIT_LIST_URL = "/deposit_list";
 const DEPOSITE_PAGE = "/deposit_page";
 

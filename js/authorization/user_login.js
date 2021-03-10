@@ -18,8 +18,6 @@ function validateLogin({ email, password }) {
 
     const user = listOfUsers.getUserByEmail(email);
 
-    console.log(email)
-
     if (!user) {
         errors = { ...errors, email: [...errors.email, "Email cannot be empty"] };
     }
@@ -41,6 +39,7 @@ export default function userLogin(event) {
     const errors = validateLogin({ email, password });
 
     showErrors(errors);
+    console.log(showErrors)
 
     if (!user) {
         alert("User does not exist");

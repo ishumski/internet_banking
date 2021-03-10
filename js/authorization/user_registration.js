@@ -55,8 +55,6 @@ export default function userRegistration(event) {
 
     showErrors(errors);
 
-    console.log(errors)
-
     const hasErrors = checkIfHasErrors(errors);
 
     if (hasErrors) {
