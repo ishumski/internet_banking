@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .credits {
   background-image: url("/images/bcg1.jpg");
   background-size: cover; }
@@ -267,7 +266,6 @@ span {
 .interest {
   margin-bottom: 10px; }
 
-/**Форма расчета депозита**/
 .slider-amount {
   position: relative; }
 

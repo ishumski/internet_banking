@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .deposit-wrapper {
   display: flex;
   max-width: 1200px;
@@ -80,7 +79,6 @@
 .interest {
   margin-bottom: 10px; }
 
-/**Форма расчета депозита**/
 .slider-amount {
   position: relative; }
 
