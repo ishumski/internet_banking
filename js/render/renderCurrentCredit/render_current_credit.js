@@ -22,10 +22,26 @@ export default function renderCurrentCredit() {
         return paymentPerMonth;
     }
 
+    amount.addEventListener("keyup", (event) => {
+        event.preventDefault();
+
+        slider.value = amount.value;
+
+        payAmount.innerHTML = ` ${creditCount(slider.value, months.value)}`;
+        return
+    });
+
     slider.addEventListener("mouseup", (event) => {
         event.preventDefault();
 
         payAmount.innerHTML = ` ${creditCount(slider.value, months.value)}`;
+        return
+    });
+    months.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        payAmount.innerHTML = ` ${creditCount(slider.value, months.value)}`;
+        return
     });
 
     function amountValue() {
