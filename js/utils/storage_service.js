@@ -7,6 +7,6 @@ class StorageService {
     get(key) {
         return localStorage.getItem(key);
     }
-}
+};
 
 export default new StorageService();

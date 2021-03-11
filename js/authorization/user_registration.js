@@ -15,32 +15,32 @@ function validateRegistration({ email, userName, password }) {
         email: [],
         userName: [],
         password: [],
-    }
+    };
 
     if (!email) {
         errors = { ...errors, email: [...errors.email, "Email cannot be empty"] }
-    }
+    };
     if (email && !EMAIL_REGEX.test(email)) {
         errors = { ...errors, email: [...errors.email, "Email invalid format"] }
-    }
+    };
     if (!userName) {
         errors = { ...errors, userName: [...errors.userName, "User name cannot be empty"] }
-    }
+    };
     if (userName && !USER_NAME.test(userName)) {
         errors = { ...errors, userName: [...errors.userName, "User name invalid format"] }
-    }
+    };
     if (!password) {
         errors = { ...errors, password: [...errors.password, "Password invalid format"] }
-    }
+    };
     if (password && password.length < MIN_PASSWORD_LENGTH) {
         errors = { ...errors, password: [...errors.password, `Password should contain at least ${MIN_PASSWORD_LENGTH} characters`] }
-    }
+    };
     if (password && !PASSWORD_REGEX.test(password)) {
         errors = { ...errors, password: [...errors.password, "Password invalid format"] }
-    }
+    };
 
     return errors;
-}
+};
 
 export default function userRegistration(event) {
     event.preventDefault();
@@ -59,7 +59,7 @@ export default function userRegistration(event) {
 
     if (hasErrors) {
         return;
-    }
+    };
 
     const hashedPassword = CryptoJS.SHA3(password);
 

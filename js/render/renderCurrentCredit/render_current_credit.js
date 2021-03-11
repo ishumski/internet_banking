@@ -1,5 +1,5 @@
 import templateCurrentCredit from "../../templates/pages/credits/credit_page/index.js"
-import { navigateToUrl } from "../../utils/routing.js";
+import {amountOfValue} from "../../utils/utils.js"
 
 const rootDiv = document.querySelector(".container");
 
@@ -15,12 +15,11 @@ export default function renderCurrentCredit() {
     const MONTH_IN_YEAR = 12;
     const MONTH_RATE = (INTEREST_RATE / MONTH_IN_YEAR) / 100;
 
-
     function creditCount(sum, term) {
 
         const paymentPerMonth = (sum * (MONTH_RATE + (MONTH_RATE / (Math.pow(1 + MONTH_RATE, term) - 1)))).toFixed(2);
         return paymentPerMonth;
-    }
+    };
 
     amount.addEventListener("keyup", (event) => {
         event.preventDefault();
@@ -37,6 +36,7 @@ export default function renderCurrentCredit() {
         payAmount.innerHTML = ` ${creditCount(slider.value, months.value)}`;
         return
     });
+
     months.addEventListener("click", (event) => {
         event.preventDefault();
 
@@ -44,14 +44,5 @@ export default function renderCurrentCredit() {
         return
     });
 
-    function amountValue() {
-        const slider = document.querySelector("#slider");
-
-        slider.addEventListener("mouseup", () => {
-            const sliderValue = slider.value;
-            amount.value = sliderValue;
-        })
-    }
-    amountValue();
-
+    amountOfValue()
 };

@@ -1,5 +1,4 @@
 import templateCreditList from "../../templates/pages/credits/credits_list/index.js"
-import renderCurrentCredit from "../renderCurrentCredit/render_current_credit.js"
 import { navigateToUrl } from "../../utils/routing.js";
 
 const rootDiv = document.querySelector(".container");
@@ -13,5 +12,5 @@ export default function renderCreditList() {
         event.preventDefault();
 
         navigateToUrl("/credit_page");
-    })
+    });
 };

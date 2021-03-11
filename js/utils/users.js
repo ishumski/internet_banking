@@ -4,6 +4,7 @@ class ListOfUsers {
     constructor(users) {
         this.users = users;
     }
+
     add(user) {
         const exitingUser = this.getUserByEmail(user.email);
 
@@ -17,7 +18,7 @@ class ListOfUsers {
     getUserByEmail(email) {
         return this.users.find((user) => user.email === email);
     }
-}
+};
 
 let users = JSON.parse(storageService.get("users"));
 

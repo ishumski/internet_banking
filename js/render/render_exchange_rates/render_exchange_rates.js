@@ -6,7 +6,6 @@ const rootDiv = document.querySelector(".container");
 export default function renderExchangeRates() {
     rootDiv.innerHTML = templateExchangeRates;
 
-    //рендер таблицы для получения курсов валют по API
     const exchangeRates = document.querySelector(".exchange__rates");
 
     const table = document.createElement("table");
@@ -23,8 +22,9 @@ export default function renderExchangeRates() {
 
         header.appendChild(textNode);
         headerRow.appendChild(header);
-    })
-    thead.appendChild(headerRow)
+    });
+
+    thead.appendChild(headerRow);
     table.appendChild(thead);
     exchangeRates.appendChild(table);
 
@@ -40,7 +40,7 @@ export default function renderExchangeRates() {
                 Cur_Name: "Беларусский рубль",
                 Cur_OfficialRate: 1,
                 Cur_Scale: 1,
-            }
+            };
 
             const currencies = curr.concat(currencyBYN);
 
@@ -57,10 +57,10 @@ export default function renderExchangeRates() {
                     </tr>
 
                     `
-                }
+                };
             });
 
-            let inputs = Array.from(document.querySelectorAll("input"));
+            const inputs = Array.from(document.querySelectorAll("input"));
 
             inputs.forEach((input) => {
 
@@ -71,10 +71,10 @@ export default function renderExchangeRates() {
 
                     filtered.forEach((elem) => {
 
-                        let currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
-                        let baseCurrencyRate = currencies.find((curr) => curr.Cur_Abbreviation === event.target.id);
+                        const currency = currencies.find((curr) => curr.Cur_Abbreviation === elem.id);
+                        const baseCurrencyRate = currencies.find((curr) => curr.Cur_Abbreviation === event.target.id);
 
-                        let { Cur_OfficialRate, Cur_Scale } = currency;
+                        const { Cur_OfficialRate, Cur_Scale } = currency;
 
                         if (event.target.id !== "BYN") {
 
@@ -102,12 +102,10 @@ export default function renderExchangeRates() {
                             } else {
                                 event.target.value = Number(inputValue).toFixed(4);
                             }
-                        }
-
-
-                    })
+                        };
+                    });
                 });
-            })
+            });
 
             tbody.innerHTML = rows.join("");
             table.appendChild(tbody);
@@ -116,5 +114,4 @@ export default function renderExchangeRates() {
     exchangeRates.appendChild(table);
 
     currentDate();
-
-}
+};

@@ -29,9 +29,10 @@ export default function renderCurrentDeposite() {
         if (amount.value > MIN_AMOUNT_VALUE || amount.value < MAX_AMOUNT_VALUE) {
             slider.value = amount.value;
         }
+
         span.innerHTML = ` ${depositCounter((slider.value), months.value)}`;
         return;
-    })
+    });
 
     slider.addEventListener("mouseup", (event) => {
         event.preventDefault();

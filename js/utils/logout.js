@@ -5,6 +5,7 @@ import storageService from "../utils/storage_service.js";
 export default function logOut() {
 
     currentUser.logout();
+    
     storageService.set("currentUser", null);
 
     navigateToUrl("/");

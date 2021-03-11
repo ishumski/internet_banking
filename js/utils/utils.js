@@ -1,12 +1,14 @@
 export function showErrors(errors) {
 
     for (let key in errors) {
+
         const span = document.querySelector(`input[name="${key}"]+span`);
 
         if (errors[key].length > 0) {
 
             const errorStr = errors[key].join("\n");
             span.innerHTML = errorStr;
+            
         } else {
             span.innerHTML = "";
         }
@@ -29,26 +31,24 @@ export default function currentDate() {
 
     if (day.length < 2) {
         day = `${0 + day}`;
-    }
+    };
 
     if (month.length < 2) {
         month = `${0 + month}`;
-    }
+    };
 
     curDate.innerHTML = `${day}.${month}.${year}`;
 };
 
 export function amountValue() {
 
-    const amount = document.querySelector("#amount");
-    const months = document.querySelector("#months");
-    const slider = document.querySelector("#slider");
     const span = document.querySelector("#profit__amount");
-    const interest = document.querySelector(".interest")
-    const tax = document.querySelector(".tax")
+    const interest = document.querySelector(".interest");
+    const tax = document.querySelector(".tax");
     const INCOME_TAX = 13;
 
     slider.addEventListener("mouseup", () => {
+
         const sliderValue = slider.value;
         amount.value = sliderValue;
 
@@ -57,6 +57,7 @@ export function amountValue() {
     });
 
     amount.addEventListener("keyup", () => {
+
         const sliderValue = slider.value;
         amount.value = sliderValue;
 
@@ -65,6 +66,7 @@ export function amountValue() {
     });
 
     months.addEventListener("click", () => {
+
         const sliderValue = slider.value;
         amount.value = sliderValue;
 
@@ -72,6 +74,14 @@ export function amountValue() {
         tax.innerHTML = ` ${((span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
     });
 
+};
 
+export function amountOfValue() {
+
+    slider.addEventListener("mouseup", () => {
+
+        const sliderValue = slider.value;
+        amount.value = sliderValue;
+    });
 };
 
