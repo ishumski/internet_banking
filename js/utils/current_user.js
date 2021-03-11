@@ -8,6 +8,11 @@ class CurrentUser {
     login(userData) {
         this.userData = userData;
     }
+
+    logout() {
+        this.userData = null;
+
+    }
 }
 
 

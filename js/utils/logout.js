@@ -1,6 +1,12 @@
+import currentUser from "../utils/current_user.js";
+import { navigateToUrl } from "../utils/routing.js";
+import storageService from "../utils/storage_service.js";
+
 export default function logOut() {
-   
-    localStorage.clear();
-    window.location.href = window.location.href;
+
+    currentUser.logout();
+    storageService.set("currentUser", null);
+
+    navigateToUrl("/");
 };
 

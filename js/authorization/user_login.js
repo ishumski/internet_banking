@@ -2,7 +2,7 @@ import currentUser from "../utils/current_user.js";
 import { navigateToUrl } from "../utils/routing.js";
 import storageService from "../utils/storage_service.js"
 import listOfUsers from "../utils/users.js"
-import { showErrors } from "../utils/utils.js"
+import {checkIfHasErrors, showErrors } from "../utils/utils.js"
 
 const EMAIL_REGEX = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
 const USER_NAME = /^[a-zA-Z0-9\-]+$/
@@ -21,8 +21,11 @@ function validateLogin({ email, password }) {
     if (!user) {
         errors = { ...errors, email: [...errors.email, "Email cannot be empty"] };
     }
-    if (user.password !== password) {
-        errors = { ...errors, email: [...errors.password, "Password does not match"] };
+
+    const hashedPassword = CryptoJS.SHA3(password).toString();
+
+    if (user.password !== hashedPassword) {
+        errors = { ...errors, email: [...errors.email, "Password does not match"] };
     }
     return errors;
 }
@@ -39,16 +42,21 @@ export default function userLogin(event) {
     const errors = validateLogin({ email, password });
 
     showErrors(errors);
-    console.log(showErrors)
+
+    const hasErrors = checkIfHasErrors(errors);
+
+    if (hasErrors) {
+        return;
+    }
 
     if (!user) {
         alert("User does not exist");
         return;
     }
 
-    const passwordHashed = CryptoJS.SHA3(password).toString();
+    const hashedPassword = CryptoJS.SHA3(password).toString();
 
-    if (user.password !== passwordHashed) {
+    if (user.password !== hashedPassword) {
         alert("User does not exist");
         return;
     }
