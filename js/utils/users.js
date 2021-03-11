@@ -6,7 +6,6 @@ class ListOfUsers {
     }
     add(user) {
 
-
         this.users = [...this.users, user];
     }
 

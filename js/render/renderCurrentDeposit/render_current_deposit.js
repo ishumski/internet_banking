@@ -1,4 +1,5 @@
 import templateCurrentDeposite from "../../templates/pages/deposits/deposit_page/index.js"
+import { amountValue } from "../../utils/utils.js"
 
 const rootDiv = document.querySelector(".container");
 
@@ -7,16 +8,11 @@ export default function renderCurrentDeposite() {
 
     const amount = document.querySelector("#amount");
     const months = document.querySelector("#months");
-    console.log(months.value)
     const slider = document.querySelector("#slider");
     const span = document.querySelector("#profit__amount");
-    const interest = document.querySelector(".interest")
-    const tax = document.querySelector(".tax")
 
     const MIN_AMOUNT_VALUE = 100;
     const MAX_AMOUNT_VALUE = 100000;
-
-
 
     function depositCounter(sum, term) {
 
@@ -32,7 +28,7 @@ export default function renderCurrentDeposite() {
     amount.addEventListener("keyup", () => {
         if (amount.value > MIN_AMOUNT_VALUE || amount.value < MAX_AMOUNT_VALUE) {
             slider.value = amount.value;
-        } 
+        }
         span.innerHTML = ` ${depositCounter((slider.value), months.value)}`;
         return;
     })
@@ -50,45 +46,11 @@ export default function renderCurrentDeposite() {
         return;
     });
 
-    months.addEventListener("click", (event)=>{
+    months.addEventListener("click", (event) => {
         event.preventDefault();
         span.innerHTML = ` ${depositCounter((slider.value), months.value)}`;
         return;
-    })
+    });
 
-    function amountValue() {
-
-        const INCOME_TAX = 13;
-
-        const slider = document.querySelector("#slider");
-
-        slider.addEventListener("mouseup", () => {
-            const sliderValue = slider.value;
-            amount.value = sliderValue;
-
-            interest.innerHTML = ` ${(span.innerHTML - (span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
-            tax.innerHTML = ` ${((span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
-        })
-
-        amount.addEventListener("keyup", () => {
-            const sliderValue = slider.value;
-            amount.value = sliderValue;
-
-            interest.innerHTML = ` ${(span.innerHTML - (span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
-            tax.innerHTML = ` ${((span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
-        })
-
-        months.addEventListener("click", () => {
-            const sliderValue = slider.value;
-            amount.value = sliderValue;
-
-            interest.innerHTML = ` ${(span.innerHTML - (span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
-            tax.innerHTML = ` ${((span.innerHTML * INCOME_TAX) / 100).toFixed(2)}`;
-        })
-
-
-    }
     amountValue();
-
-
 };

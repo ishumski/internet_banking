@@ -33,7 +33,16 @@ export default function renderExchangeRates() {
 
     fetch("https://www.nbrb.by/api/exrates/rates?periodicity=0")
         .then(response => response.json())
-        .then(currencies => {
+        .then(curr => {
+
+            const currencyBYN = {
+                Cur_Abbreviation: "BYN",
+                Cur_Name: "Беларусский рубль",
+                Cur_OfficialRate: 1,
+                Cur_Scale: 1,
+            }
+
+            const currencies = curr.concat(currencyBYN);
 
             const rows = currencies.map((currency) => {
                 let { Cur_ID, Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate } = currency;
@@ -69,15 +78,33 @@ export default function renderExchangeRates() {
 
                         if (event.target.id !== "BYN") {
 
-                            elem.value = parseFloat((event.target.value * ((baseCurrencyRate.Cur_OfficialRate / Cur_OfficialRate) * Cur_Scale)).toFixed(4));
+                            elem.value = parseFloat(event.target.value * ((baseCurrencyRate.Cur_OfficialRate / Cur_OfficialRate) * Cur_Scale)) !== 0 ?
+                                parseFloat((event.target.value * ((baseCurrencyRate.Cur_OfficialRate / Cur_OfficialRate) * Cur_Scale)).toFixed(4)) : "";
 
                             if (baseCurrencyRate.Cur_Scale > 1) {
-                                elem.value = parseFloat((event.target.value * (((baseCurrencyRate.Cur_OfficialRate / baseCurrencyRate.Cur_Scale) / Cur_OfficialRate) * Cur_Scale)).toFixed(4));
+                                elem.value = parseFloat(event.target.value * (((baseCurrencyRate.Cur_OfficialRate / baseCurrencyRate.Cur_Scale) / Cur_OfficialRate) * Cur_Scale)) !== 0 ?
+                                    parseFloat((event.target.value * (((baseCurrencyRate.Cur_OfficialRate / baseCurrencyRate.Cur_Scale) / Cur_OfficialRate) * Cur_Scale)).toFixed(4)) : "";
                             }
 
                             return;
                         }
-                        elem.value = parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(4));
+
+                        elem.value = parseFloat((event.target.value / Cur_OfficialRate) * Cur_Scale) !== 0 ?
+                            parseFloat(((event.target.value / Cur_OfficialRate) * Cur_Scale).toFixed(4)) : "";
+
+                        elem.addEventListener("focusout", elemFocusOut);
+
+                        function elemFocusOut(event) {
+                            const inputValue = event.target.value;
+                            if (isNaN(inputValue) || Number(inputValue) === 0) {
+                                event.target.value = "";
+                                return;
+                            } else {
+                                event.target.value = Number(inputValue).toFixed(4);
+                            }
+                        }
+
+
                     })
                 });
             })

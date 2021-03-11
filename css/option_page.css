@@ -1,0 +1,72 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box; }
+
+.option-wrapper {
+  height: 100vh;
+  background: url("/images/bcg2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.header-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white; }
+
+.logout-btn {
+  background: none;
+  border: 2px solid white;
+  outline: none;
+  padding: 15px;
+  font-size: 16px;
+  margin: 10px 25px 0px 0px;
+  color: #ffffff; }
+  .logout-btn:hover {
+    border: 2px solid #ff00bf;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 10px rgba(255, 219, 254, 0.2);
+    background-color: rgba(190, 16, 147, 0.753); }
+
+.box {
+  height: 250px;
+  background-color: rgba(91, 23, 100, 0.6);
+  border-radius: 10px;
+  box-shadow: none; }
+
+.option__menu {
+  max-width: 600px;
+  margin: 70px auto 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px; }
+
+.option__menu-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  border: 5px solid rgba(204, 199, 199, 0.808);
+  border-radius: 10px;
+  margin: 10px;
+  height: -webkit-fill-available; }
+
+.box:hover {
+  box-shadow: 0px 0px 20px 10px rgba(255, 219, 254, 0.2);
+  background-color: rgba(190, 16, 147, 0.753); }
+  .box:hover .option__menu-box {
+    border: 5px solid white; }
+
+.option__menu-icon {
+  flex-grow: 1;
+  margin-top: 50px; }
+  .option__menu-icon img {
+    filter: brightness(0) invert(1); }
+
+.option__menu-title {
+  font-size: 25px;
+  color: #ffffff; }
+
+/*# sourceMappingURL=option_page.css.map */

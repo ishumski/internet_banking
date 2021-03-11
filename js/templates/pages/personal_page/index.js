@@ -1,7 +1,11 @@
 const template = `
 <div class="option-wrapper">
             <div class="option__page">
-                <header class="header-option">thunDER BANK</header>
+                <header class="header-option">
+                <div> thunDER BANK </div>
+                <button type="submit" class="logout-btn">LogOut</button>
+                
+                </header>
                 <div class="option__menu">
                     <div class="option__menu-payments box">
                         <div class="option__menu-box">

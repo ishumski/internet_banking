@@ -12,8 +12,27 @@
 }
 
 .header-option {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     color: white;
 }
+.logout-btn {
+    background: none;
+    border: 2px solid white;
+    outline: none;
+    padding: 15px;
+    font-size: 16px;
+    margin: 10px 25px 0px 0px;
+    color: #ffffff;
+    &:hover {
+        border: 2px solid rgb(255, 0, 191);
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 10px rgba(255, 219, 254, 0.2);
+        background-color: rgba(190, 16, 147, 0.753);
+    }
+}
+
 .box {
     height: 250px;
     background-color: rgba(91, 23, 100, 0.6);
@@ -41,8 +60,8 @@
 .box:hover {
     box-shadow: 0px 0px 20px 10px rgba(255, 219, 254, 0.2);
     background-color: rgba(190, 16, 147, 0.753);
-    
-    .option__menu-box{
+
+    .option__menu-box {
         border: 5px solid white;
     }
 }

@@ -1,7 +1,6 @@
 import templatePersonalPage from "../../templates/pages/personal_page/index.js"
-import renderDepositList from "../renderDepositsList/render_deposits_list.js"
-import renderCreditList from "../renderCreditsList/render_credit_list.js"
 import { navigateToUrl } from "../../utils/routing.js";
+import logOut from "../../utils/logout.js"
 
 const rootDiv = document.querySelector(".container");
 
@@ -12,7 +11,7 @@ export default function renderPersonalPage() {
     const currencyBtn = document.querySelector(".option__menu-currency");
     const depositsBtn = document.querySelector(".option__menu-deposits");
     const creditsBtn = document.querySelector(".option__menu-credits");
-
+    const logOutBtn = document.querySelector(".logout-btn");
 
     paymentsBtn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -33,4 +32,6 @@ export default function renderPersonalPage() {
         event.preventDefault();
         navigateToUrl("/credit_list");
     });
+
+    logOutBtn.addEventListener("click", logOut);
 }
